@@ -2,9 +2,9 @@ package Proyecto1_Ordenamiento;
 
 public class InsertionSort<T extends Comparable<? super T>> {
 
-	public void insertionSort(T[] array) {
-		// el ciclo comienza en el primer índice y recorre hasta el final del array
-		for (int i = 1; i < array.length; i++) {
+	public void insertionSort(T[] array, int startIndex, int endIndex) {
+		// el ciclo comienza en el primer Ã­ndice y recorre hasta el final del array
+		for (int i = startIndex + 1; i < endIndex; i++) {
 			// se crea un variable y se le da un valor
 			int currentIndex = i;
 
