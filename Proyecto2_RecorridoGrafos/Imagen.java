@@ -49,31 +49,6 @@ public class Imagen {
         }
     }
    
-    public BufferedImage redimensionar(String archivo, double porcentaje ){
-        
-        BufferedImage tmp = null;
-        try {
-            tmp = ImageIO.read(new File(archivo));
-        } 
-        catch (IOException ex) {
-            Logger.getLogger(Imagen.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        int ancho = tmp.getWidth();
-        int alto = tmp.getHeight();
-        
-        int escalaAncho = (int)(porcentaje* ancho);
-        int escalaAlto = (int)(porcentaje*alto);
-        
-        BufferedImage bufim = new BufferedImage(escalaAncho, escalaAlto, tmp.getType());
-        Graphics2D g = bufim.createGraphics();
-        
-        g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-        g.drawImage(tmp, 0,0, escalaAncho,escalaAlto, 0,0,ancho,alto, null);
-        
-        g.dispose();
-        
-        return bufim;
-}
     public void binarizarImagen(double umbral){
     	
         for (int i = 0; i < alto; i++) {
