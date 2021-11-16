@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
+import java.awt.image.Raster;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -43,17 +44,11 @@ public class Imagen {
             for (int j = 0; j < ancho; j++) {
                 cont++;
                 arreglo[i][j] = new Color(tmp.getRGB(j, i));
-                System.out.println(cont + ":"+"RedGreenBlue:" + tmp.getRGB(j, i));
+                //System.out.println(cont + ":"+"RedGreenBlue:" + tmp.getRGB(j, i));
             }
         }
     }
-    public void arreglo() {
-    	for (int i = 0; i < alto; i++) {
-            for (int j = 0; j < ancho; j++) {
-                System.out.println(arreglo[i][j]);
-            }
-        }
-    }
+   
     public BufferedImage redimensionar(String archivo, double porcentaje ){
         
         BufferedImage tmp = null;
@@ -105,4 +100,22 @@ public class Imagen {
         }
         return salida;
     }
+    
+    public int[][] MatrizImg(BufferedImage img) 
+    {
+		Raster tmp = img.getData();
+		
+		int ancho = tmp.getWidth();
+		int alto = tmp.getHeight();
+		
+		int p[][] = new int[ancho][alto];
+		
+		for (int i = 0; i < ancho; i++) {
+			for(int j = 0; j< alto; j++) {
+				p[i][j] = tmp.getSample(i,j,0);
+			}
+		}
+
+		return p;
+	}
 }
