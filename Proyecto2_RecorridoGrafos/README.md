@@ -18,9 +18,9 @@ Se creo una clase para establecer una ancho y altura permitada para la imagen, t
 
 + **MatrizImg**: obtiene los pixeles de la imagen recibida como parametro.
 
-### BreadFirstSearch
+### BreadthFirstSearch
 
-BreadFirstSearch (Búsqueda en anchura) es un algoritmo de búsqueda no informada utilizado para recorrer o buscar elementos en un grafo. El algoritmo no usa ninguna estrategia heurística.
+BreadthFirstSearch (Búsqueda en anchura) es un algoritmo de búsqueda no informada utilizado para recorrer o buscar elementos en un grafo. El algoritmo no usa ninguna estrategia heurística.
 
 **Explicacion del codigo**
 + Primero obtenemos el tamaño del arreglo y luego utilizamos un ciclo para recorrer y almacenarlo en una cola luego se realiza comparaciones para entrar en otro ciclo he ir marcando los elementos visitados
